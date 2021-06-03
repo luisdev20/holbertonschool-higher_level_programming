@@ -5,8 +5,11 @@
 def append_write(filename="", text=""):
     """Appends a string at the end of a text file (UTF-8)
 
-    Return: The number of characters"""
+    Args:
+        filename (str): The name of the file to append to.
+        text (str): The string to append to the file filename.
+    Return:
+        The number of characters.
+    """
     with open(filename, mode="a", encoding="utf-8") as my_file:
-        my_file.write(text)
-        added_chars = my_file.tell()
-    return (added_chars)
+        return my_file.write(text)
