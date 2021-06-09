@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a Base Class."""
 import json
+import csv
 
 
 class Base:
