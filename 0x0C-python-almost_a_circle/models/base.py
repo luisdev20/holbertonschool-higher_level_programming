@@ -18,6 +18,6 @@ class Base:
             id (int): The id of new classes in ptoject.
         """
         self.id = id
-        if id == None:
+        if id is None:
             type(self).__nb_objects += 1
             self.id = type(self).__nb_objects
