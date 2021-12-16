@@ -1,11 +1,9 @@
 #!/usr/bin/node
-const size = Math.floor(Number(process.argv[2]));
-if (isNaN(size)) {
+const farg = Math.floor(Number(process.argv[2]));
+if (isNaN(farg)) {
   console.log('Missing size');
 } else {
-  for (let r = 0; r < size; r++) {
-    let row = '';
-    for (let c = 0; c < size; c++) row += 'X';
-    console.log(row);
+  for (let i = 0; i < farg; i++) {
+    console.log('x'.repeat(farg));
   }
 }
