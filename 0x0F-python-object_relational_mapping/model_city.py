@@ -1,19 +1,14 @@
 #!/usr/bin/python3
-"""This file contains the class definition of a State and an instance"""
+"""City Model"""
 
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.sql.schema import ForeignKey
-from model_state import Base
+from relationship_state import Base
+from sqlalchemy import Column, Integer, String, MetaData, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
 
 
 class City(Base):
-    """
-    Represents a column of a table for a MySQL database.
-
-    id (Integer): The state's id
-    name (String): The state's name
-    """
-    __tablename__ = "cities"
-    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    """ Class of cities table """
+    __tablename__ = 'cities'
+    id = Column(Integer, unique=True, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)

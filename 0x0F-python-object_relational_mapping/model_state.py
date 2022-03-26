@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-"""This file contains the class definition of a State and an instance"""
+"""Firt state model"""
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, backref
 
 Base = declarative_base()
 
 
 class State(Base):
-    """
-    Represents a column of a table for a MySQL database.
-
-    id (Integer): The state's id
-    name (String): The state's name
-    """
-    __tablename__ = "states"
-    id = Column(Integer, primary_key=True)
+    """ Class of states table """
+    __tablename__ = 'states'
+    id = Column(Integer, unique=True, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
+    cities = relationship("City", backref="state", cascade="all, delete")
