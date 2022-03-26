@@ -42,6 +42,7 @@ def solve_NQueen(N, pos_x, square_y):
                 solve_NQueen(N, pos_x + 1, square_y)
             square_y.pop(-1)
 
+
 if __name__ == '__main__':
     import sys
 
@@ -53,7 +54,7 @@ if __name__ == '__main__':
 
     try:
         N = int(N)
-    except:
+    except Exception:
         print("N must be a number")
         exit(1)
 
@@ -65,4 +66,3 @@ if __name__ == '__main__':
     square_y = []
     pos_x = 0
     solve_NQueen(N, pos_x, square_y)
-    
